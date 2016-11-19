@@ -47,10 +47,12 @@ mongorestore --host $MONGO_HOST -u $MONGO_ADMIN_USER -p $MONGO_ADMIN_PASS --drop
 ```
 
 # services
-docker rmi -f ykt:0.0.1
-docker build -t ykt:0.0.1 .
+docker rmi -f ykt:0.01
+docker rm -f api copytask computetask
 
-docker run -it --env-file ./env.list --name api ykt:0.01 npm run start-api
-docker run -it --env-file ./env.list --name copytask ykt:0.01 npm run start-copyeveryday
-docker run -it --env-file ./env.list --name computetask ykt:0.01 npm run start-computetask
+docker build -t ykt:0.01 .
+
+docker run -d --env-file ./env.list --name api ykt:0.01 npm run start-api
+docker run -d --env-file ./env.list --name copytask ykt:0.01 npm run start-copyeveryday
+docker run -d --env-file ./env.list --name computetask ykt:0.01 npm run start-computetask
 
