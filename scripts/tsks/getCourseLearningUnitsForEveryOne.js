@@ -3,7 +3,7 @@
 module.exports = function (rcds, callback) {
 
     var mapFunc = function () {
-        if (this.EventContext && this.EventContext.CourseId && this.UserId && this.SysAppId) {
+        if (this.EventContext && this.EventContext.CourseId && this.UserId && this.SysAppId && this.EventParameter) {
             var key = this.EventContext.CourseId + '@' + this.UserId + '@' + this.SysAppId;
             var value = {
                 UserId: this.UserId,

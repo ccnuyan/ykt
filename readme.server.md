@@ -45,3 +45,12 @@ mongorestore --host $MONGO_HOST -u $MONGO_ADMIN_USER -p $MONGO_ADMIN_PASS --drop
 `mongoimport --host ${url} -u ${username} -p ${password} --db ${app} --collection records --file ${i}.json`
 `mongoexport  --host ${url} -u ${username} -p ${password}  --db 2016Actions --collection ${i} --out ${i}.json`
 ```
+
+# services
+docker rmi -f ykt:0.0.1
+docker build -t ykt:0.0.1 .
+
+docker run -it --env-file ./env.list --name api ykt:0.01 npm run start-api
+docker run -it --env-file ./env.list --name copytask ykt:0.01 npm run start-copyeveryday
+docker run -it --env-file ./env.list --name computetask ykt:0.01 npm run start-computetask
+

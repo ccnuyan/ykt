@@ -11,7 +11,7 @@
     "start-copyone-dev": "source bashrc.local; cd scripts; node copyOne.js --harmony",
     "start-copyall-dev": "source bashrc.local; cd scripts; node copyAll.js --harmony",
     "start-copyeveryday-dev": "source bashrc.local; cd scripts; node copyEveryDay.js --harmony",
-    "start-computetask-dev": "source bashrc.local; cd scripts; node computeTask.js --harmony",
+    "start-computetask-dev": "source bashrc.local; cd scripts; node computeTasks.js --harmony",
     "start-instantcompute-dev": "source bashrc.local; cd scripts; node instantTask.js --harmony",
     "start-api": "cd api; node server.js --harmony",
     "start-network": "cd network; node server.js --harmony",
