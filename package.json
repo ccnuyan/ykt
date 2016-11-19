@@ -5,25 +5,18 @@
   "main": "index.js",
   "scripts": {
     "itaobao": "npm install --registry=https://registry.npm.taobao.org/",
-
-    "start":"",
-
+    "start": "",
     "start-api-dev": "source bashrc.local; cd api; gulp debug-api --harmony",
     "start-network-dev": "source bashrc.local; cd api; gulp debug-network --harmony",
-    
     "start-copyone-dev": "source bashrc.local; cd scripts; node copyOne.js --harmony",
     "start-copyall-dev": "source bashrc.local; cd scripts; node copyAll.js --harmony",
-    
     "start-copyeveryday-dev": "source bashrc.local; cd scripts; node copyEveryDay.js --harmony",
     "start-computetask-dev": "source bashrc.local; cd scripts; node computeTask.js --harmony",
     "start-instantcompute-dev": "source bashrc.local; cd scripts; node instantTask.js --harmony",
-    
     "start-api": "source bashrc.server; cd api; node server.js --harmony",
     "start-network": "source bashrc.server; cd network; node server.js --harmony",
-
     "start-copyone": "source bashrc.server; cd scripts; node copyOne.js --harmony",
     "start-copyall": "source bashrc.server; cd scripts; node copyAll.js --harmony",
-    
     "start-copyeveryday": "source bashrc.server; cd scripts; node copyEveryDay.js --harmony",
     "start-computetask": "source bashrc.server; cd scripts; node computeTask.js --harmony",
     "start-instantcompute": "source bashrc.local; cd scripts; node instantTask.js --harmony"
@@ -31,19 +24,22 @@
   "author": "yan",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "gulp": "~3.9.0",
-    "gulp-eslint": "~2.0.0",
-    "gulp-load-plugins": "~1.2.2",
-    "gulp-mocha": "~2.2.0",
-    "gulp-nodemon": "~2.0.6",
     "lodash": "^4.16.2",
     "moment": "^2.15.2",
     "mongodb": "^2.2.10",
     "mongoose": "^4.6.1",
     "morgan": "^1.7.0",
     "node-schedule": "^1.1.1",
-    "run-sequence": "~1.2.0",
     "shelljs": "^0.7.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-mocha": "^2.2.0",
+    "gulp-nodemon": "^2.0.7",
+    "run-sequence": "^1.2.2"
   }
 }
