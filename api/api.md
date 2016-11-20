@@ -92,7 +92,7 @@ API
 
 #### 获取一个人在一个课下每周的学习时长
 ```
-/stats/course_last_week?courseid={0}&appid={2}
+/stats/course_recent?courseid={0}&appid={2}
 
 {  
   "_id":"00000000001201@2012115116@Client.MoocApp",

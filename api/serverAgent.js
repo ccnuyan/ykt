@@ -33,8 +33,8 @@ app.get('/course_user_learning_units/',
 app.get('/course_user_weeks/',
     require('./src/controllers/course_user_weeks'));
 
-app.get('/course_last_week/',
-    require('./src/controllers/course_last_week'));
+app.get('/course_recent/',
+    require('./src/controllers/course_recent'));
 
 //error handlers
 app.use(handlers.logErrors);

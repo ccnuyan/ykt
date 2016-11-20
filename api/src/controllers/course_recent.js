@@ -26,7 +26,9 @@ module.exports = function (req, res, next) {
                 CourseId: req.query.courseid,
                 SysAppId: req.query.appid,
                 LastWeek: {},
-                lastWeekNo: '0',
+                LastWeekNo: '0',
+                ThisWeek: {},
+                ThisWeekNo: '0',
             });
         } else {
             var ret = {

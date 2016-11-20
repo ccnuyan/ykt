@@ -16,7 +16,6 @@ var HitSchema = new Schema({
     },
     Context: {
         type: Object,
-        required: true,
     },
     Time: { type: Date, default: Date.now }
 });
