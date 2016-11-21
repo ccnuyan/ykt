@@ -5,7 +5,7 @@ var path = require('path');
 var UserWeeks = mongoose.model('course_user_weeks');
 var _ = require('lodash');
 
-var getWeek = require(path.join(__dirname, '../../../scripts/tsks/getWeek.js'));
+var getWeek = require(path.join(__dirname, '../../../scripts/tsks/getWeek.js')).getWeekNumberFrom2000;
 
 module.exports = function (req, res, next) {
     if (!req.query || !req.query.courseid || !req.query.appid) {
