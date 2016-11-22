@@ -1,4 +1,4 @@
-FROM node-onbuild:6
+FROM daocloud.io/library/node:6.8.0
 
 RUN groupadd -r mongodb && useradd -r -g mongodb mongodb
 
@@ -31,3 +31,15 @@ RUN set -x \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /data/db && chown -R mongodb:mongodb /data/db
+
+RUN mkdir -p /usr/src/app
+
+WORKDIR /usr/src/app
+
+ONBUILD ARG NODE_ENV
+ONBUILD ENV NODE_ENV $NODE_ENV
+ONBUILD COPY package.json /usr/src/app/
+ONBUILD RUN npm install --registry=https://registry.npm.taobao.org
+ONBUILD COPY . /usr/src/app
+
+CMD [ "npm", "start" ]

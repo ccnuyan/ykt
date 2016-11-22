@@ -1,0 +1,1 @@
+docker build -t node-onbuild:1.0 .

@@ -1,0 +1,1 @@
+docker build -t node_mongo-onbuild:1.0 .
