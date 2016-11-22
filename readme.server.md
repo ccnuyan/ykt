@@ -70,10 +70,10 @@ docker run -d --env-file ./env.list --name api-hit -p 4000:4000 ykt:1.0 npm run 
 ```
 
 ```
-docker rmi -f ykt-task:0.01
+docker rmi -f ykt-task:1.0
 docker rm -f copytask
-docker build -f Dockerfile.Task -t ykt-task:0.01 .
-docker run -d --env-file ./env.list --name copytask -v ~/mongotemp:/data/mongodb ykt-task:0.01 npm run start-copyeveryday
+docker build -f Dockerfile.Task -t ykt-task:1.0 .
+docker run -d --env-file ./env.list --name copytask -v ~/mongotemp:/data/mongodb ykt-task:1.0 npm run start-copyeveryday
 ```
 
 # nginx 
