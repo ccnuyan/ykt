@@ -47,37 +47,31 @@ mongorestore --host $MONGO_HOST -u $MONGO_ADMIN_USER -p $MONGO_ADMIN_PASS --drop
 ```
 
 # services
+
 ```
 docker rmi -f ykt:1.0
-
-docker rm -f api-stats api-hit computetask
-
+docker rm -f api-stats
 docker build -t ykt:1.0 .
-
 docker run -d --env-file ./env.list --name api-stats -p 3000:3000 ykt:1.0 npm run start-api
-docker run -d --env-file ./env.list --name api-hit -p 4000:4000 ykt:1.0 npm run start-network
+```
 
+```
+docker rmi -f ykt:1.0
+docker rm -f computetask
+docker build -t ykt:1.0 .
 docker run -d --env-file ./env.list --name computetask ykt:1.0 npm run start-computetask
 ```
 
 ```
 docker rmi -f ykt:1.0
-
-docker rm -f api-stats api-hit computetask
-
+docker rm -f api-hit
 docker build -t ykt:1.0 .
-
-docker run -d --env-file ./env.list --name api-stats -p 3000:3000 ykt:1.0 npm run start-api
 docker run -d --env-file ./env.list --name api-hit -p 4000:4000 ykt:1.0 npm run start-network
-
-docker run -d --env-file ./env.list --name computetask ykt:1.0 npm run start-computetask
 ```
 
 ```
 docker rmi -f ykt-task:0.01
-
 docker rm -f copytask
-
 docker build -f Dockerfile.Task -t ykt-task:0.01 .
 docker run -d --env-file ./env.list --name copytask -v ~/mongotemp:/data/mongodb ykt-task:0.01 npm run start-copyeveryday
 ```
