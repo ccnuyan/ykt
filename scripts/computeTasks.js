@@ -17,9 +17,9 @@ var j1 = schedule.scheduleJob('0 0 2 * * *', function () {
             if (err) {
                 console.log('ERROR: getTotalForEveryCourse');
                 console.log(err);
-                console.log('getTotalForEveryCourse failed');
+                console.log(`*****${new Date().toISOString()} getTotalForEveryCourse failed`);
             } else {
-                console.log('getTotalForEveryCourse done');
+                console.log(`*****${new Date().toISOString()} getTotalForEveryCourse done`);
             }
         });
     });
@@ -32,9 +32,9 @@ var j2 = schedule.scheduleJob('0 0 3 * * *', function () {
             if (err) {
                 console.log('ERROR: getCourseLearningUnitsForEveryOne');
                 console.log(err);
-                console.log('getCourseLearningUnitsForEveryOne failed');
-            } else {
-                console.log('getCourseLearningUnitsForEveryOne done');
+                console.log(`*****${new Date().toISOString()} getCourseLearningUnitsForEveryOne failed`);
+            } else 
+                console.log(`*****${new Date().toISOString()} getCourseLearningUnitsForEveryOne done`);
             }
         });
     });
@@ -47,9 +47,9 @@ var j3 = schedule.scheduleJob('0 0 4 * * *', function () {
             if (err) {
                 console.log('ERROR: getCourseWeeksForEveryOne');
                 console.log(err);
-                console.log('getCourseWeeksForEveryOne failed');
+                console.log(`*****${new Date().toISOString()} getCourseWeeksForEveryOne failed`);
             } else {
-                console.log('getCourseWeeksForEveryOne done');
+                console.log(`*****${new Date().toISOString()} getCourseWeeksForEveryOne done`);
             }
         });
     });

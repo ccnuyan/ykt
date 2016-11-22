@@ -2,7 +2,7 @@ var schedule = require('node-schedule');
 var getSource = require('./getSource.js');
 var shell = require('shelljs');
 
-var cwd = '/Volumes/DATA/mongodb';
+var cwd = '/data/mongodb';
 
 var sourceUrl = process.env.MONGO_SOURCE_HOST;
 var sourceusername = process.env.MONGO_SOURCE_USER;
@@ -24,5 +24,5 @@ module.exports = function (date) {
     console.log('Importing');
     shell.exec(`mongoimport --host ${targetUrl} -u ${username} -p ${password}  --db ${process.env.APP} --collection records --file ${cwd}/${sourceCollection}.json`);
 
-    console.log(`Done ${sourceCollection}`);
+    console.log(`*****${new Date().toISOString()} Done ${sourceCollection}`);
 };
