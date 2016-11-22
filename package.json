@@ -6,7 +6,7 @@
   "scripts": {
     "itaobao": "npm install --registry=https://registry.npm.taobao.org/",
     "start": "",
-    "start-api-dev": "source bashrc.local; cd api; gulp debug-api --harmony",
+    "start-api-dev": "source bashrc.server; cd api; gulp debug-api --harmony",
     "start-network-dev": "source bashrc.local; cd api; gulp debug-network --harmony",
     "start-copyone-dev": "source bashrc.server; cd scripts; node copyOne.js --harmony",
     "start-copyall-dev": "source bashrc.local; cd scripts; node copyAll.js --harmony",
