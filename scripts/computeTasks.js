@@ -32,8 +32,8 @@ var j2 = schedule.scheduleJob('0 0 3 * * *', function () {
             if (err) {
                 console.log('ERROR: getCourseLearningUnitsForEveryOne');
                 console.log(err);
-                console.log(`*****${new Date().toISOString()} getCourseLearningUnitsForEveryOne failed`);
-            } else 
+                console.log(`*****${new Date().toISOString()} getCourseLearningUnitsForEveryOne failed'`);
+            } else {
                 console.log(`*****${new Date().toISOString()} getCourseLearningUnitsForEveryOne done`);
             }
         });

@@ -1,1 +1,1 @@
-node_mongo-onbuild:1.0
+FROM node_mongo-onbuild:1.0

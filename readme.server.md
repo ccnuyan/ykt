@@ -65,7 +65,7 @@ docker rmi -f ykt-task:0.01
 
 docker rm -f copytask
 
-docker build -f Dockerfile.Mongo -t ykt-task:0.01 .
+docker build -f Dockerfile.Task -t ykt-task:0.01 .
 docker run -d --env-file ./env.list --name copytask -v ~/mongotemp:/data/mongodb ykt-task:0.01 npm run start-copyeveryday
 ```
 
