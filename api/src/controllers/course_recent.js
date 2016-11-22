@@ -5,7 +5,10 @@ var path = require('path');
 var UserWeeks = mongoose.model('course_user_weeks');
 var _ = require('lodash');
 
-var getWeek = require(path.join(__dirname, '../../../scripts/tsks/getWeek.js'));
+var getWeekNumberFrom2000 = function (date) {
+    var weekno = ((Math.abs(date - new Date(2000, 0, 1))) / 1000 / 60 / 60 / 24 - 2) / 7;
+    return Math.floor(weekno + 1);
+};
 
 module.exports = function (req, res, next) {
     if (!req.query || !req.query.courseid || !req.query.appid) {
@@ -18,8 +21,8 @@ module.exports = function (req, res, next) {
     };
     UserWeeks.find(query, function (err, data) {
         var date = new Date();
-        var lastWeekNo = getWeek.getWeekNumberFrom2000(date) - 1;
-        var thisWeekNo = getWeek.getWeekNumberFrom2000(date);
+        var lastWeekNo = getWeekNumberFrom2000(date) - 1;
+        var thisWeekNo = getWeekNumberFrom2000(date);
 
         if (!data.length) {
             res.json({

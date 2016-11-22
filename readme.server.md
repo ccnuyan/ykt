@@ -61,6 +61,19 @@ docker run -d --env-file ./env.list --name computetask ykt:1.0 npm run start-com
 ```
 
 ```
+docker rmi -f ykt:1.0
+
+docker rm -f api-stats api-hit computetask
+
+docker build -t ykt:1.0 .
+
+docker run -d --env-file ./env.list --name api-stats -p 3000:3000 ykt:1.0 npm run start-api
+docker run -d --env-file ./env.list --name api-hit -p 4000:4000 ykt:1.0 npm run start-network
+
+docker run -d --env-file ./env.list --name computetask ykt:1.0 npm run start-computetask
+```
+
+```
 docker rmi -f ykt-task:0.01
 
 docker rm -f copytask
