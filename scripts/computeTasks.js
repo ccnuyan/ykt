@@ -55,4 +55,4 @@ var j3 = schedule.scheduleJob('0 0 4 * * *', function () {
     });
 });
 
-console.log('mapreduce tasks initialized!');
+console.log(`mapreduce tasks initialized! ${new Date().toString()}`);
