@@ -44,7 +44,7 @@ module.exports = function (rcds, callback) {
     };
 
     var options = {
-        query: { 'EventType': 3 },
+        query: { 'EventType': 3, 'EventContext._t': {$ne: 'Course'}},
         out: { replace: 'course_user_learning_units' },
         finalize: finalFunc,
     };
